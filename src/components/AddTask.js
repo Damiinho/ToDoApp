@@ -1,10 +1,31 @@
 import React from "react";
 
-const AddTask = () => {
+const AddTask = (props) => {
   return (
-    <>
-      <div>elo2</div>
-    </>
+    <form onSubmit={props.confirmed}>
+      <label>
+        <input type="text" value={props.value} onChange={props.inputChange} />
+      </label>
+      <label>
+        <input
+          type="checkbox"
+          checked={props.checked}
+          onChange={props.priorityChange}
+        />{" "}
+        priorytet
+      </label>
+      <br />
+      <label>
+        Do kiedy zrobić?{" "}
+        <input
+          type="date"
+          value={props.taskEndDate}
+          onChange={props.dateChange}
+        />
+      </label>
+      <br />
+      <button>Dodaj zadanie</button>
+    </form>
   );
 };
 
