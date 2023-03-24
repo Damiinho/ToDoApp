@@ -1,0 +1,34 @@
+.App__done-tasks {
+    background-color: #F9F5E7;
+    width: 1024px;
+}
+
+.App__done-tasks__header {
+    background-color: #EDDBC7;
+    padding: 10px;
+    text-align: center;
+}
+
+.App__done-tasks ul {
+    padding: 0;
+}
+
+.App__done-tasks ul li {
+
+    padding: 10px 15px;
+    display: flex;
+}
+
+.App__done-tasks ul li:nth-child(even) {
+    background-color: #FFE7CC;
+}
+
+.App__done-tasks ul li .left {
+    width: 80%;
+}
+
+.App__done-tasks ul li .right {
+    text-align: right;
+    font-size: 12px;
+    width: 20%;
+}

@@ -1,5 +1,7 @@
 import React from "react";
 import DoneTask from "./DoneTask";
+import "./DoneTasks.css";
+
 const DoneTasks = (props) => {
   const tasks = props.tasks.map((task, index) => (
     <DoneTask
@@ -12,20 +14,23 @@ const DoneTasks = (props) => {
   ));
 
   return (
-    <>
-      <h2>Zadania zrobione ({tasks.length}) </h2>
-      <label>
-        <h4>
-          Ukryj
-          <input
-            type="checkbox"
-            checked={props.isActive}
-            onChange={props.hide}
-          />
-        </h4>
-      </label>
-      {props.isActive ? null : tasks.reverse()}
-    </>
+    <div className="App__done-tasks">
+      <div className="App__done-tasks__header">
+        <h3>Zadania zrobione ({tasks.length})</h3>
+        <p>ukryj</p>
+        <label>
+          <h4>
+            Ukryj
+            <input
+              type="checkbox"
+              checked={props.isActive}
+              onChange={props.hide}
+            />
+          </h4>
+        </label>
+      </div>
+      <ul>{props.isActive ? null : tasks.reverse()}</ul>
+    </div>
   );
 };
 

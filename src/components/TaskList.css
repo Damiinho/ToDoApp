@@ -1,0 +1,33 @@
+.App__task-list {
+    background-color: #FFE7CC;
+    width: 1024px;
+}
+
+.App__task-list__header {
+    text-align: center;
+    padding: 10px;
+    background-color: #F9F5E7;
+}
+
+.App__task-list ul {
+    padding: 0;
+}
+
+.App__task-list ul li {
+
+    padding: 10px 15px;
+    display: flex;
+}
+
+.App__task-list ul li:nth-child(even) {
+    background-color: #F9F5E7;
+}
+
+.App__task-list ul li .left {
+    width: 80%;
+}
+
+.App__task-list ul li .right {
+    text-align: right;
+    width: 20%;
+}

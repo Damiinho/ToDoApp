@@ -3,29 +3,34 @@ import "./AddTask.css";
 
 const AddTask = (props) => {
   return (
-    <form onSubmit={props.confirmed}>
-      <label>
-        <input type="text" value={props.value} onChange={props.inputChange} />
-      </label>
-      <label>
+    <form className="App__form" onSubmit={props.confirmed}>
+      <label className="App__form-text">
         <input
-          type="checkbox"
-          checked={props.checked}
-          onChange={props.priorityChange}
-        />{" "}
-        priorytet
-      </label>
-      <br />
-      <label>
-        Do kiedy zrobić?{" "}
-        <input
-          type="date"
-          value={props.taskEndDate}
-          onChange={props.dateChange}
+          type="text"
+          placeholder={"wpisz coś"}
+          value={props.value}
+          onChange={props.inputChange}
         />
       </label>
-      <br />
-      <button>Dodaj zadanie</button>
+      <div className="App__form-priority">
+        <label className="App__form-priority__date">
+          Wybierz datę wykonania:{" "}
+          <input
+            type="date"
+            value={props.taskEndDate}
+            onChange={props.dateChange}
+          />
+        </label>
+        <label className="App__form-priority__importance">
+          Czy zadanie jest ważne?{" "}
+          <input
+            type="checkbox"
+            checked={props.checked}
+            onChange={props.priorityChange}
+          />
+        </label>
+      </div>
+      <button>dodaj zadanie</button>
     </form>
   );
 };

@@ -1,5 +1,6 @@
 import React from "react";
 import Task from "./Task";
+import "./TaskList.css";
 
 const TaskList = (props) => {
   const tasks = props.tasks.map((task, index) => (
@@ -24,10 +25,12 @@ const TaskList = (props) => {
   });
 
   return (
-    <>
-      <h2>Lista zadań do zrobienia ({tasks.length}):</h2>
+    <div className="App__task-list">
+      <div className="App__task-list__header">
+        <h3>Lista zadań do zrobienia ({tasks.length})</h3>
+      </div>
       <ul>{tasks}</ul>
-    </>
+    </div>
   );
 };
 

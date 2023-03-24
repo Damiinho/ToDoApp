@@ -13,23 +13,24 @@ class App extends Component {
     },
     taskList: [
       {
-        text: "elo",
+        text: "Skończyć pisać „to do app”",
+        priority: true,
+        taskEndDate: "2023-03-23",
+      },
+      {
+        text: "Nauczyć się pisać bez litrówek",
         priority: false,
-        taskEndDate: "2023-01-10",
-      },
-      {
-        text: "elo3",
-        priority: true,
         taskEndDate: "2023-03-02",
       },
       {
-        text: "elo2",
-        priority: true,
+        text: "Zmienić to schemat sortowania w tej aplikacji",
+        priority: false,
         taskEndDate: "2023-03-02",
       },
       {
-        text: "elo1",
-        priority: true,
+        text:
+          "Napisać rozprawkę na temat wyższości warzyw nad owocami lub odwrotnie. Poprzeć dziesięcioma argumentami i udostępnić w internecie, po 10 dniach usunąć i udawać, że to się nigdy nie zdarzyło",
+        priority: false,
         taskEndDate: "2023-03-02",
       },
     ],
@@ -116,7 +117,9 @@ class App extends Component {
     return (
       <>
         <div className="App">
-          <h1>TO DO APP</h1>
+          <div className="App__title">
+            <h1>„to do” (zrobienia)</h1>
+          </div>
           <AddTask
             value={this.state.newTask.text}
             inputChange={this.handleInputChange}

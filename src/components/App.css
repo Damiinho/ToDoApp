@@ -1,4 +1,25 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ECF9FF;
+}
+
 .App {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.App__title {
+  border-radius: 20px 20px 0 0;
+  width: 1024px;
   text-align: center;
-  padding: 15px
+  padding: 10px 0 20px;
+  color: #F9F5E7;
+  background-color: #A7727D;
+  text-shadow: 2px 2px black;
 }
