@@ -10,6 +10,7 @@ class App extends Component {
       priority: false,
       taskEndDate: "",
     },
+    taskList: [],
   };
 
   handleInputChange = (e) => {
@@ -30,14 +31,25 @@ class App extends Component {
   };
   handleConfirmed = (e) => {
     e.preventDefault();
-    alert("Dodano nowe zadanie");
-    this.setState({
-      newTask: {
-        text: "",
-        priority: false,
-        taskEndDate: "",
-      },
-    });
+
+    const { text, priority, taskEndDate } = this.state.newTask;
+    if (text !== "" && taskEndDate !== "") {
+      const newTask = {
+        text,
+        priority,
+        taskEndDate,
+      };
+
+      const taskList = [...this.state.taskList].concat(newTask);
+      this.setState({
+        newTask: {
+          text: "",
+          priority: false,
+          taskEndDate: "",
+        },
+        taskList,
+      });
+    } else alert("Tekst zadania oraz data wykonania są wymagane");
   };
 
   render() {
