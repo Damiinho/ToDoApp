@@ -1,3 +1,7 @@
 .priority {
     color: red;
 }
+
+li {
+    list-style: none;
+}
