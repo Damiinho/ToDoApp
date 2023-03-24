@@ -10,7 +10,28 @@ class App extends Component {
       priority: false,
       taskEndDate: "",
     },
-    taskList: [],
+    taskList: [
+      {
+        text: "elo",
+        priority: false,
+        taskEndDate: "2023-01-10",
+      },
+      {
+        text: "elo3",
+        priority: true,
+        taskEndDate: "2023-03-02",
+      },
+      {
+        text: "elo2",
+        priority: true,
+        taskEndDate: "2023-03-02",
+      },
+      {
+        text: "elo1",
+        priority: true,
+        taskEndDate: "2023-03-02",
+      },
+    ],
   };
 
   handleInputChange = (e) => {
@@ -52,10 +73,19 @@ class App extends Component {
     } else alert("Tekst zadania oraz data wykonania są wymagane");
   };
 
+  doneButton = (id) => {
+    console.log(id);
+  };
+  deleteButton = (id) => {
+    console.log(id);
+    const taskList = [...this.state.taskList];
+    taskList.splice(id, 1);
+    this.setState({ taskList });
+  };
+
   render() {
     return (
       <>
-        <h1>TO DO APP</h1>
         <AddTask
           value={this.state.newTask.text}
           inputChange={this.handleInputChange}
@@ -65,7 +95,13 @@ class App extends Component {
           dateChange={this.handleDate}
           confirmed={this.handleConfirmed}
         />
-        <TaskList />
+        {this.state.taskList.length === 0 ? null : (
+          <TaskList
+            tasks={this.state.taskList}
+            doneButton={this.doneButton}
+            deleteButton={this.deleteButton}
+          />
+        )}
       </>
     );
   }

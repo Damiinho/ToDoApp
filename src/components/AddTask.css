@@ -4,11 +4,11 @@ input {
   font-size: 20px
 }
 
-.form {
+form {
   font-size: 20px;
 }
 
-.form button {
+form button {
   padding: 3px 10px;
   text-transform: uppercase;
   margin: 20px;
