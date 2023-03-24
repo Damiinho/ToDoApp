@@ -34,6 +34,7 @@ class App extends Component {
       },
     ],
     doneTasks: [],
+    doneTasksHide: false,
   };
 
   handleInputChange = (e) => {
@@ -107,6 +108,10 @@ class App extends Component {
     this.setState({ doneTasks });
   };
 
+  handleHide = (e) => {
+    this.setState({ doneTasksHide: e.target.checked });
+  };
+
   render() {
     return (
       <>
@@ -132,6 +137,8 @@ class App extends Component {
             <DoneTasks
               tasks={this.state.doneTasks}
               deleteButton={this.handleDeleteFromDoneButton}
+              isActive={this.state.doneTasksHide}
+              hide={this.handleHide}
             />
           )}
         </div>

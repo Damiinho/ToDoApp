@@ -25,7 +25,7 @@ const TaskList = (props) => {
 
   return (
     <>
-      <h2>Lista zadań do zrobienia:</h2>
+      <h2>Lista zadań do zrobienia ({tasks.length}):</h2>
       <ul>{tasks}</ul>
     </>
   );

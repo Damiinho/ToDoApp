@@ -13,8 +13,18 @@ const DoneTasks = (props) => {
 
   return (
     <>
-      <h2>Zadania zrobione</h2>
-      {tasks.reverse()}
+      <h2>Zadania zrobione ({tasks.length}) </h2>
+      <label>
+        <h4>
+          Ukryj
+          <input
+            type="checkbox"
+            checked={props.isActive}
+            onChange={props.hide}
+          />
+        </h4>
+      </label>
+      {props.isActive ? null : tasks.reverse()}
     </>
   );
 };
