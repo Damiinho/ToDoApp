@@ -77,7 +77,6 @@ class App extends Component {
     console.log(id);
   };
   deleteButton = (id) => {
-    console.log(id);
     const taskList = [...this.state.taskList];
     taskList.splice(id, 1);
     this.setState({ taskList });

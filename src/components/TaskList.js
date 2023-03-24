@@ -13,6 +13,15 @@ const TaskList = (props) => {
       deleteButton={props.deleteButton}
     />
   ));
+  tasks.sort((a, b) => {
+    if (a.props.text < b.props.text) {
+      return -1;
+    }
+    if (a.props.text > b.props.text) {
+      return 1;
+    }
+    return 0;
+  });
 
   return (
     <>
