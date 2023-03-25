@@ -95,7 +95,6 @@ class App extends Component {
       .getSeconds()
       .toString()
       .padStart(2, "0")}`;
-    console.log(doneTask);
     const doneTasks = [...this.state.doneTasks].concat(doneTask);
     this.setState({ taskList, doneTasks });
   };
@@ -108,6 +107,12 @@ class App extends Component {
     const doneTasks = [...this.state.doneTasks];
     doneTasks.splice(id, 1);
     this.setState({ doneTasks });
+  };
+  handleBackToTaskList = (id) => {
+    const doneTasks = [...this.state.doneTasks];
+    const newTask = doneTasks.splice(id, 1);
+    const taskList = [...this.state.taskList].concat(newTask);
+    this.setState({ doneTasks, taskList });
   };
 
   handleTaskListHide = (e) => {
@@ -146,6 +151,7 @@ class App extends Component {
             <DoneTasks
               tasks={this.state.doneTasks}
               deleteButton={this.handleDeleteFromDoneButton}
+              backButton={this.handleBackToTaskList}
               isHide={this.state.doneTasksHide}
               hide={this.handleDoneTasksHide}
             />

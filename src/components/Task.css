@@ -9,3 +9,54 @@
 li {
     list-style: none;
 }
+
+.App__task-list__task-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.App__task-list__task button {
+    height: 30px;
+    margin: 3px;
+    border-radius: 5px;
+    cursor: pointer;
+    border-width: 0px;
+    display: block;
+    transition: 0.3s;
+}
+
+.App__task-list__done-button {
+    background-color: #939B62;
+    color: white;
+    font-weight: bold;
+    line-height: 30px;
+}
+
+.App__task-list__done-button:hover {
+    background-color: #79804f;
+}
+
+.App__task-list__done-button:active {
+    background-color: #939B62;
+    color: #79804f;
+}
+
+.App__task-list__delete-button {
+    width: 30px;
+    font-size: 30px;
+    line-height: 30px;
+    background-color: #FF7B54;
+    color: white;
+    font-weight: bold
+}
+
+.App__task-list__delete-button:hover {
+
+    background-color: #dd5b34;
+}
+
+.App__task-list__delete-button:active {
+    background-color: #FF7B54;
+    color: #dd5b34;
+}

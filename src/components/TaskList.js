@@ -27,7 +27,11 @@ const TaskList = (props) => {
   return (
     <div className="App__task-list">
       <div className="App__task-list__header" onClick={props.hide}>
-        <h3>Lista zadań do zrobienia ({tasks.length})</h3>
+        <h3>
+          {props.isHide
+            ? `Lista zadań do zrobienia (${tasks.length}) ⮛ ⮛ ⮛`
+            : `Lista zadań do zrobienia (${tasks.length}) ⮙ ⮙ ⮙`}
+        </h3>
       </div>
       {props.isHide ? null : <ul>{tasks}</ul>}
     </div>

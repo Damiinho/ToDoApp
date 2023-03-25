@@ -14,8 +14,20 @@ const Task = (props) => {
         <p className={now > end ? "toLate priority" : null}>
           Termin: {props.taskEndDate}{" "}
         </p>
-        <button onClick={() => props.doneButton(props.id)}>Zrobione</button>
-        <button onClick={() => props.deleteButton(props.id)}>usuń</button>
+        <div className="App__task-list__task-buttons">
+          <button
+            className="App__task-list__done-button"
+            onClick={() => props.doneButton(props.id)}
+          >
+            zrobione ✔
+          </button>
+          <button
+            className="App__task-list__delete-button"
+            onClick={() => props.deleteButton(props.id)}
+          >
+            ×
+          </button>
+        </div>
       </div>
     </li>
   );

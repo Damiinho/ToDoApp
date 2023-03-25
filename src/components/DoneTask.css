@@ -1,0 +1,41 @@
+.App__done-tasks__task .App__done-tasks__task-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.App__done-tasks__task button {
+    height: 30px;
+    margin: 3px;
+    border-radius: 5px;
+    cursor: pointer;
+    border-width: 0px;
+    display: block;
+    transition: 0.3s;
+}
+
+.App__done-tasks__delete-button {
+    width: 30px;
+    font-size: 30px;
+    line-height: 30px;
+    background-color: #FF7B54;
+    color: white;
+    font-weight: bold
+}
+
+.App__done-tasks__delete-button:hover {
+
+    background-color: #dd5b34;
+}
+
+.App__done-tasks__delete-button:active {
+    background-color: #FF7B54;
+    color: #dd5b34;
+}
+
+.App__done-tasks__back-button {
+    background-color: #fdc135;
+    color: white;
+    font-weight: bold;
+    line-height: 30px;
+}
