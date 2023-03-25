@@ -1,12 +1,18 @@
 .App__done-tasks {
     background-color: #F9F5E7;
     width: 1024px;
+    border-top: 2px #A7727D dashed
 }
 
 .App__done-tasks__header {
     background-color: #EDDBC7;
     padding: 10px;
     text-align: center;
+    cursor: pointer;
+}
+
+.App__done-tasks__header:hover {
+    opacity: 0.7;
 }
 
 .App__done-tasks ul {

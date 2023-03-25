@@ -1,12 +1,18 @@
 .App__task-list {
     background-color: #FFE7CC;
     width: 1024px;
+    border-top: 2px #A7727D dashed
 }
 
 .App__task-list__header {
     text-align: center;
     padding: 10px;
     background-color: #F9F5E7;
+    cursor: pointer;
+}
+
+.App__task-list__header:hover {
+    opacity: 0.7;
 }
 
 .App__task-list ul {

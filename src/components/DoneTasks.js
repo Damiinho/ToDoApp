@@ -15,21 +15,11 @@ const DoneTasks = (props) => {
 
   return (
     <div className="App__done-tasks">
-      <div className="App__done-tasks__header">
+      <div className="App__done-tasks__header" onClick={props.hide}>
         <h3>Zadania zrobione ({tasks.length})</h3>
-        <p>ukryj</p>
-        <label>
-          <h4>
-            Ukryj
-            <input
-              type="checkbox"
-              checked={props.isActive}
-              onChange={props.hide}
-            />
-          </h4>
-        </label>
+        <h4>{props.isHide ? "pokaż" : "ukryj"}</h4>
       </div>
-      <ul>{props.isActive ? null : tasks.reverse()}</ul>
+      <ul>{props.isHide ? null : tasks.reverse()}</ul>
     </div>
   );
 };

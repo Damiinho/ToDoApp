@@ -1,4 +1,8 @@
 .priority {
+    font-weight: bold;
+}
+
+.toLate {
     color: red;
 }
 

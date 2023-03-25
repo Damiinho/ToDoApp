@@ -14,28 +14,29 @@ class App extends Component {
     taskList: [
       {
         text: "Skończyć pisać „to do app”",
-        priority: true,
-        taskEndDate: "2023-03-23",
+        priority: false,
+        taskEndDate: "2023-03-24",
       },
       {
         text: "Nauczyć się pisać bez litrówek",
-        priority: false,
-        taskEndDate: "2023-03-02",
+        priority: true,
+        taskEndDate: "2024-10-02",
       },
       {
         text: "Zmienić to schemat sortowania w tej aplikacji",
         priority: false,
-        taskEndDate: "2023-03-02",
+        taskEndDate: "2023-05-07",
       },
       {
         text:
           "Napisać rozprawkę na temat wyższości warzyw nad owocami lub odwrotnie. Poprzeć dziesięcioma argumentami i udostępnić w internecie, po 10 dniach usunąć i udawać, że to się nigdy nie zdarzyło",
         priority: false,
-        taskEndDate: "2023-03-02",
+        taskEndDate: "2023-04-13",
       },
     ],
+    taskListHide: false,
     doneTasks: [],
-    doneTasksHide: false,
+    doneTasksHide: true,
   };
 
   handleInputChange = (e) => {
@@ -109,8 +110,11 @@ class App extends Component {
     this.setState({ doneTasks });
   };
 
-  handleHide = (e) => {
-    this.setState({ doneTasksHide: e.target.checked });
+  handleTaskListHide = (e) => {
+    this.setState({ taskListHide: !this.state.taskListHide });
+  };
+  handleDoneTasksHide = (e) => {
+    this.setState({ doneTasksHide: !this.state.doneTasksHide });
   };
 
   render() {
@@ -134,16 +138,19 @@ class App extends Component {
               tasks={this.state.taskList}
               doneButton={this.handleDoneButton}
               deleteButton={this.handleDeleteButton}
+              isHide={this.state.taskListHide}
+              hide={this.handleTaskListHide}
             />
           )}
           {this.state.doneTasks.length === 0 ? null : (
             <DoneTasks
               tasks={this.state.doneTasks}
               deleteButton={this.handleDeleteFromDoneButton}
-              isActive={this.state.doneTasksHide}
-              hide={this.handleHide}
+              isHide={this.state.doneTasksHide}
+              hide={this.handleDoneTasksHide}
             />
           )}
+          <div className="App__footer">Czy ktoś umie w design? 2023</div>
         </div>
       </>
     );
