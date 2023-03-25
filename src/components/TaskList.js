@@ -15,10 +15,13 @@ const TaskList = (props) => {
     />
   ));
   tasks.sort((a, b) => {
-    if (a.props.text < b.props.text) {
+    a = a.props.text.toLowerCase();
+    b = b.props.text.toLowerCase();
+
+    if (a < b) {
       return -1;
     }
-    if (a.props.text > b.props.text) {
+    if (a > b) {
       return 1;
     }
     return 0;
