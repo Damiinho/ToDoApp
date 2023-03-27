@@ -4,7 +4,8 @@
 }
 
 body {
-  background-color: #ECF9FF;
+  background-image: url(../images/background.jpg);
+  background-size: 2000px;
 }
 
 .App {
