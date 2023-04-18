@@ -1,6 +1,7 @@
 import React from "react";
 import Task from "./Task";
 import "./TaskList.css";
+import ArrowIMG from "../images/arrow.png";
 
 const TaskList = (props) => {
   const tasks = props.tasks.map((task, index) => (
@@ -31,9 +32,25 @@ const TaskList = (props) => {
     <div className="App__task-list">
       <div className="App__task-list__header" onClick={props.hide}>
         <h3>
-          {props.isHide
-            ? `Lista zadań do zrobienia (${tasks.length}) ⮛ ⮛ ⮛`
-            : `Lista zadań do zrobienia (${tasks.length}) ⮙ ⮙ ⮙`}
+          {props.isHide ? (
+            <>
+              <p>Lista zadań do zrobienia ({tasks.length}) </p>
+              <div style={{ transform: "rotate(180deg)" }}>
+                <img src={ArrowIMG} alt="arrow" />
+                <img src={ArrowIMG} alt="arrow" />
+                <img src={ArrowIMG} alt="arrow" />
+              </div>
+            </>
+          ) : (
+            <>
+              <p>Lista zadań do zrobienia ({tasks.length}) </p>
+              <div>
+                <img src={ArrowIMG} alt="arrow" />
+                <img src={ArrowIMG} alt="arrow" />
+                <img src={ArrowIMG} alt="arrow" />
+              </div>
+            </>
+          )}
         </h3>
       </div>
       {props.isHide ? null : <ul>{tasks}</ul>}
