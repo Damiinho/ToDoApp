@@ -5,7 +5,8 @@
 
 body {
   background-image: url(../images/background.jpg);
-  background-size: 2000px;
+  background-size: cover;
+  background-attachment: fixed
 }
 
 .App {

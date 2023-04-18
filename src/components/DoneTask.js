@@ -1,5 +1,6 @@
 import React from "react";
 import "./DoneTask.css";
+import AnticlockIMG from "../images/anticlockwisebold.png";
 
 const DoneTask = (props) => {
   return (
@@ -20,7 +21,9 @@ const DoneTask = (props) => {
             className="App__done-tasks__back-button"
             onClick={() => props.backButton(props.id)}
           >
-            cofnij ⮌
+            <p>cofnij </p>
+            {/* ⮌ */}
+            <img src={AnticlockIMG} alt="anticlock" />
           </button>
         </div>
       </div>
