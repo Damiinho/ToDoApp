@@ -1,6 +1,6 @@
 .App__done-tasks {
     background-color: #F9F5E7;
-    width: 1024px;
+    width: 100%;
     border-top: 2px #A7727D dashed
 }
 
@@ -36,5 +36,6 @@
 .App__done-tasks ul li .right {
     text-align: right;
     font-size: 12px;
+    min-width: 120px;
     width: 20%;
 }

@@ -1,6 +1,6 @@
 .App__task-list {
     background-color: #FFE7CC;
-    width: 1024px;
+    width: 100%;
     border-top: 2px #A7727D dashed
 }
 
@@ -35,5 +35,28 @@
 
 .App__task-list ul li .right {
     text-align: right;
+    min-width: 150px;
     width: 20%;
+}
+
+.App__task-list ul li .right p {
+    font-size: 13px;
+}
+
+@media screen and (max-width:410px) {
+    .App__task-list ul li {
+        padding: 12px 15px;
+        flex-direction: column;
+    }
+
+    .App__task-list ul li .left {
+        width: 100%;
+        text-align: center;
+    }
+
+    .App__task-list ul li .right {
+        margin-top: 15px;
+        width: 100%;
+        text-align: center;
+    }
 }

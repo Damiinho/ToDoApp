@@ -1,11 +1,10 @@
 .App__form {
-  width: 1024px;
+  width: 100%;
   background-color: #FFE7CC;
   display: flex;
   flex-direction: column;
   font-size: 20px;
 }
-
 
 input {
   padding: 5px 10px;
@@ -17,10 +16,16 @@ input {
 }
 
 .App__form-text input {
-  margin: 12px;
-  width: 1000px;
+  margin: 12px 2.5% 12px 2.5%;
+  width: 95%;
   border-radius: 10px;
+}
 
+@media screen and (max-width:450px) {
+
+  .App__form-text input {
+    margin-bottom: 0px;
+  }
 }
 
 .App__form-priority {
@@ -28,8 +33,22 @@ input {
   justify-content: center;
 }
 
+@media screen and (max-width:450px) {
+  .App__form-priority {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 .App__form-priority__date {
   margin: 20px;
+}
+
+@media screen and (max-width:450px) {
+  .App__form-priority__date {
+    text-align: center;
+    margin: 5px 10px;
+  }
 }
 
 .App__form-priority__date input {
@@ -40,10 +59,14 @@ input {
   margin: 20px;
 }
 
+@media screen and (max-width:450px) {
+  .App__form-priority__importance {
+    margin: 5px;
+  }
+}
 
 .App__form button {
   padding: 10px 10px;
-  /* text-transform: uppercase; */
   cursor: pointer;
   margin: 0 20px 20px 20px;
   font-size: 20px;
@@ -57,12 +80,12 @@ input {
 }
 
 .App__form button:hover {
-  background-color: #E4D0D0;
-  color: #A7727D
+  background-color: #745359;
+  color: #F9F5E7
 }
 
 .App__form button:active {
 
-  background-color: #A7727D;
-  color: black
+  background-color: #745359;
+  color: #745359
 }
